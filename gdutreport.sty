@@ -1,0 +1,110 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Author: Elun(一轮)
+% Connection: 
+%      my github name: ElunDai
+%      Email: daielun@outlook.com
+% Description:
+%       a report template for GDUT
+% Notes:
+%       needed compiler: XeLaTex
+%       needed document class: report
+%       needed encoding: UTF-8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ProvidesPackage{gdutreport}
+\usepackage{geometry}
+\geometry{left=3.0cm,right=2.0cm,top=2.5cm,bottom=2.5cm}
+%\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xeCJK}
+\usepackage{amssymb,amsmath}
+\usepackage{iitem}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{multicol} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\GDUTstuinfo[4]{\def\name{#1} \def\id{#2} \def\college{#3} \def\class{#4}}
+\newcommand\GDUTtheses[1]{\def\thesesname{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{\small 第\,\thechapter\,章\quad #1}{}}
+\fancyhead[ER,OR]{\leftmark}
+\fancyhead[EL,OL]{\thesesname \quad \name}
+\fancyfoot[EC,OC]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt} %分割线宽度，0为没
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{titlesec}
+\titleformat{\chapter}{\centering\Huge\bfseries}{第\,\thechapter\,章}{1em}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{red}{rgb}{1,0,0}
+
+\lstset{
+    frame = shadowbox,
+    numbers = left, numberstyle=\tiny,stepnumber=2,
+    breaklines=true,breakatwhitespace=false,
+    showspaces=false,
+    showtabs=false,
+    tabsize=4,
+    keywordstyle=\color{dkgreen},
+    commentstyle=\color{mauve},
+    rulesepcolor=\color{gray},
+    escapeinside={(*}{*)},
+    morekeywords={}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\GDUTstart{指导老师}{学年}{日期\today}
+\newcommand{\GDUTfirstpage}[3]{
+    \thispagestyle{empty}
+    \begin{figure}[t]
+        \includegraphics[width=0.15\linewidth]{img/gdut_logo}
+    \end{figure}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\linewidth]{img/gdut_tittle}
+    \end{figure}
+    ~\\*
+    ~\\*
+    \begin{center}
+    {\Huge \bfseries \thesesname}\\
+    ~\\*
+    \large{\[
+        \begin{aligned}
+        \text{姓\quad \quad 名}~&:~\text{\name}\\
+        ~\\
+        \text{学\quad \quad 号}~&:~\text{\id}\\
+        ~\\
+        \text{学\quad \quad 院}~&:~\text{\college}\\
+        ~\\
+        \text{专业班级}~&:~\text{\class}\\
+        ~\\
+        \text{指导老师}~&:~\text{#1}\\
+        ~\\
+        \text{学\quad \quad 年}~&:~\text{#2}\\
+        ~\\
+        \end{aligned}
+        \]}
+    \begin{figure}[b]
+        \centering
+        \LARGE #3 \\
+    \end{figure}
+    \newpage
+    \end{center}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\GDUTcontents}{
+\pagenumbering{roman}
+%\renewcommand{\contentsname}{\center 目录}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\endinput
