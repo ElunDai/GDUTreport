@@ -99,7 +99,7 @@ int main(void)
 \begin{document}
 	\GDUTstuinfo{一轮}{311500xxxx}{自动化}{物联网工程3班}
 	\GDUTtheses{离散数学作业}
-    \GDUTfirstpage{张刚手把手教你学Tex}{2016-2017}{\today}
+    \GDUTfirstpage{张钢手把手教你学Tex}{2016-2017}{\today}
     \GDUTcontents
     %某一章用\chapter
     \Chapter{第四章 \quad 二元关系和函数}
