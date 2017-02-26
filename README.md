@@ -33,7 +33,6 @@ a report package for the report in GDUT.
 
 ```latex
 \documentclass{report}
-\usepackage{xeCJK} %Chinese support
 \usepackage{gdutreport}
 \begin{document}
 	%先完善基本信息，由于没有做检查所以不填会报错
@@ -75,11 +74,11 @@ int main(void)
 
 -   Encoding: UTF-8
 
-    Options->Configure->Editor->Default Font Encoding
+      Options->Configure->Editor->Default Font Encoding
 
 -   document class: report
 
-    \documentclass{report} 如果不是report可能会报错
+      \documentclass{report} 如果不是report可能会报错
 
 
 
@@ -87,7 +86,6 @@ int main(void)
 
 ```latex
 \documentclass{report}
-\usepackage{xeCJK} %Chinese support
 \usepackage{gdutreport}
 
 \newcommand\question[1]{\addcontentsline{toc}{section}{#1} \section*{#1}}
